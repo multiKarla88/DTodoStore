@@ -1,0 +1,25 @@
+body {
+  font-family: 'Open Sans' !important; 
+}
+
+.page-header, h2 {
+font-family: 'Open Sans' !important; 
+}
+
+.navbar-brand, .text-logo {
+font-family: 'Open Sans' !important;  
+}
+
+p, .caption h4, label, table, .panel, #contactpage > h2.success, #contactpage h2.error  {
+ font-size: 14px !important;
+}
+
+h2 {
+ font-size: 30px !important;
+}
+.navbar-brand, .text-logo {
+ font-size: 18px !important;
+}
+.navbar-left a {
+ font-size: 14px !important;
+}

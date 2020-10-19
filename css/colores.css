@@ -1,0 +1,19 @@
+/*Colores de las distintas secciones de la pagina.*/
+
+
+/* Color del Background | Default: #FFF */
+body {
+  background-color: #ffffff ;
+}
+
+/* Color de los encabezados | Default: #222222 */
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+.toast, .toast-success {background-color: #28a745;}
+
+/* Color del fondo con opacidad del carouse | Default: #29123f */
+#carousel-home .layer {
+  background-color:#29123f;
+	opacity: 0.4;
+}
