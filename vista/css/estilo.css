@@ -6,7 +6,7 @@ body {
 body {
   /* Padding requerido para .navbar-fixed-top. Remover si usas .navbar-static-top. 
   Cambiar si altura del navegador cambia. */
-  padding-top: 100px;
+  padding-top: 160px;
   font-family: 'Open Sans', sans-serif !important;
   font-size: 14px;
 }
