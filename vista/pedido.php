@@ -4,8 +4,10 @@
     <title>Pedido</title>
     <?php include './inc/link.php'; ?>
 </head>
-<body id="container-page-index">
-    <?php include './inc/carrito.php'; ?>
+<body >
+<div class="fixed-top">
+<?php include './inc/carrit.php'; ?>
+</div>
     <section id="container-pedido">
         <div class="container">
             <div class="page-header">
@@ -14,7 +16,7 @@
             <br><br><br>
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <img class="img-responsive center-all-contens" src="assets/img/logo.png" style="opacity: .4">
+                    <img class="store-image" src="img/logo Dtodo.png" style="opacity: .4">
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <div id="form-compra">
@@ -50,7 +52,7 @@
                                       <div class="form-group">
                                         <div class="input-group">
                                           <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                          <input class="form-control all-elements-tooltip" type="password" placeholder="Introdusca su contraseña" required name="clien-pass" data-toggle="tooltip" data-placement="top" title="Introdusca su contraseña">
+                                          <input class="form-control all-elements-tooltip" type="password" placeholder="Introduzca su contraseña" required name="clien-pass" data-toggle="tooltip" data-placement="top" title="Introdusca su contraseña">
                                         </div>
                                       </div>
                                       <input type="hidden"  name="clien-number" value="notlog">
@@ -68,5 +70,6 @@
         </div>
     </section>
     <?php include './inc/footer.php'; ?>
+ 
 </body>
 </html>
