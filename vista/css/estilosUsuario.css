@@ -1,0 +1,16 @@
+.user-wrapper{
+    display: flex;
+    height: calc(100% - 66px);
+}
+
+.user-wrapper .left-sidebar{
+    margin-top: 40px;
+    margin-right: 50px;
+    margin-bottom: 200px;
+    flex: 2;
+}
+
+.user-wrapper .user-content{
+    flex: 8;
+
+}
