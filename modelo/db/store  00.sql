@@ -17,26 +17,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `store`
 --
-CREATE DATABASE IF NOT EXISTS `id14865932_store` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `id14865932_store`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `administrador`
---
-
-CREATE TABLE IF NOT EXISTS `administrador` (
-  `Nombre` varchar(30) NOT NULL,
-  `Clave` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`Nombre`, `Clave`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3');
+CREATE DATABASE IF NOT EXISTS `store` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `store`;
 
 -- --------------------------------------------------------
 
@@ -44,20 +26,47 @@ INSERT INTO `administrador` (`Nombre`, `Clave`) VALUES
 -- Estructura de tabla para la tabla `categoria`
 --
 
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `CodigoCat` varchar(30) NOT NULL,
-  `Nombre` varchar(30) NOT NULL,
-  `Descripcion` text NOT NULL
+CREATE TABLE IF NOT EXISTS categoria (
+  idCategoria INT NOT NULL AUTO_INCREMENT,
+  CodigoCat varchar(30) NOT NULL,
+  Nombre varchar(30) NOT NULL,
+  Descripcion text NOT NULL,
+  Estado varchar(30) NOT NULL,
+  idCatPadre INT NULL,
+  PRIMARY KEY (idCategoria),
+  FOREIGN KEY (idCatPadre)
+      REFERENCES categoria(idCategoria)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `categoria`
+-- Estructura de tabla para la tabla `rol`
 --
 
-INSERT INTO `categoria` (`CodigoCat`, `Nombre`, `Descripcion`) VALUES
-('C1', 'Electrodomésticos', 'Articulos de primera necesidad para el hogar'),
-('C2', 'Multimedia', 'Articulos de entretenimiento y diversión'),
-('C3', 'Móbiles', 'Teléfonos celulares smartphones');
+CREATE TABLE IF NOT EXISTS rol (
+  idRol INT NOT NULL AUTO_INCREMENT,
+  rol varchar(50) NOT NULL,
+  PRIMARY KEY (idRol)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS usuario (
+  idUsuario INT NOT NULL AUTO_INCREMENT,
+  correo varchar(50) NOT NULL,
+  contrasenia varchar(30) NOT NULL,
+  fechaIngreso DATE NOT NULL,
+  estado varchar(30) NOT NULL,
+  idRol INT NOT NULL,
+  PRIMARY KEY (idUsuario),
+  FOREIGN KEY (idRol)
+      REFERENCES rol(idRol)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -66,45 +75,16 @@ INSERT INTO `categoria` (`CodigoCat`, `Nombre`, `Descripcion`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `cliente` (
+  idCliente INT NOT NULL AUTO_INCREMENT,
   `NIT` varchar(30) NOT NULL,
   `Nombre` varchar(30) NOT NULL,
   `NombreCompleto` varchar(70) NOT NULL,
   `Apellido` varchar(70) NOT NULL,
-  `Clave` text NOT NULL,
-  `Direccion` varchar(200) NOT NULL,
   `Telefono` int(20) NOT NULL,
-  `Email` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `detalle`
---
-
-CREATE TABLE IF NOT EXISTS `detalle` (
-  `NumPedido` int(20) NOT NULL,
-  `CodigoProd` varchar(30) NOT NULL,
-  `CantidadProductos` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `producto`
---
-
-CREATE TABLE IF NOT EXISTS `producto` (
-  `CodigoProd` varchar(30) NOT NULL,
-  `NombreProd` varchar(30) NOT NULL,
-  `CodigoCat` varchar(30) NOT NULL,
-  `Precio` decimal(30,2) NOT NULL,
-  `Modelo` varchar(30) NOT NULL,
-  `Marca` varchar(30) NOT NULL,
-  `Stock` int(20) NOT NULL,
-  `NITProveedor` varchar(30) NOT NULL,
-  `Imagen` varchar(150) NOT NULL,
-  `Nombre` varchar(30) NOT NULL
+  idUsuario INT NOT NULL,
+  PRIMARY KEY (idCliente),
+  FOREIGN KEY (idUsuario)
+      REFERENCES usuario(idUsuario)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -114,120 +94,262 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 CREATE TABLE IF NOT EXISTS `proveedor` (
+  idProveedor INT NOT NULL AUTO_INCREMENT,
   `NITProveedor` varchar(30) NOT NULL,
   `NombreProveedor` varchar(30) NOT NULL,
   `Direccion` varchar(200) NOT NULL,
   `Telefono` int(20) NOT NULL,
-  `PaginaWeb` varchar(30) NOT NULL
+  `PaginaWeb` varchar(30) NOT NULL,
+  PRIMARY KEY (idProveedor)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `proveedor`
---
-
-INSERT INTO `proveedor` (`NITProveedor`, `NombreProveedor`, `Direccion`, `Telefono`, `PaginaWeb`) VALUES
-('0001781', 'Sony', 'Minato, Tokio, Japón', 22596485, 'www.sony.com'),
-('0001782', 'HTC', 'Taoyuan, Taiwán, (República de China)', 25987456, 'www.htc.com'),
-('0001783', 'TCL', 'Huizhou, Guangdong, China', 25698745, 'tcl.com.ar'),
-('0001785', 'Samsung', 'Samsung Town, Seúl, Corea del Sur', 22504787, 'www.samsung.com'),
-('0001787', 'LG', 'Seúl,Corea del Sur', 26589874, 'www.lg.com'),
-('0001788', 'Compaq', 'Houston, Texas, EE.UU', 24569875, 'www.compaq.com');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `venta`
+-- Estructura de tabla para la tabla `marca`
 --
 
-CREATE TABLE IF NOT EXISTS `venta` (
-`NumPedido` int(20) NOT NULL,
-  `Fecha` varchar(150) NOT NULL,
-  `NIT` varchar(30) NOT NULL,
-  `Descuento` int(20) NOT NULL,
-  `TotalPagar` decimal(30,2) NOT NULL,
-  `Estado` varchar(150) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `marca` (
+  idMarca INT NOT NULL AUTO_INCREMENT,
+  `marca` varchar(30) NOT NULL,
+  PRIMARY KEY (idMarca)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Índices para tablas volcadas
+-- Estructura de tabla para la tabla `producto`
 --
 
---
--- Indices de la tabla `administrador`
---
-ALTER TABLE `administrador`
- ADD PRIMARY KEY (`Nombre`);
+CREATE TABLE IF NOT EXISTS `producto` (
+  idProducto INT NOT NULL AUTO_INCREMENT,
+  `CodigoProd` varchar(30) NOT NULL,
+  `NombreProd` varchar(30) NOT NULL,
+  `descripcion` text NOT NULL,
+  `Precio` decimal(30,2) NOT NULL,
+  `Modelo` varchar(30) NOT NULL,
+  `Stock` int(20) NOT NULL,
+  `Imagen` varchar(150) NOT NULL,
+  estado varchar(30) NOT NULL,
+  `idProveedor` INT NOT NULL, 
+  `idMarca` INT NOT NULL,
+  `idCategoria` INT NOT NULL,
+    PRIMARY KEY (idProducto),
+  FOREIGN KEY (idProveedor)
+      REFERENCES proveedor(idProveedor),
+  FOREIGN KEY (idMarca)
+      REFERENCES marca(idMarca),
+  FOREIGN KEY (idCategoria)
+      REFERENCES categoria(idCategoria)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Indices de la tabla `categoria`
---
-ALTER TABLE `categoria`
- ADD PRIMARY KEY (`CodigoCat`);
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
- ADD PRIMARY KEY (`NIT`);
-
---
--- Indices de la tabla `detalle`
---
-ALTER TABLE `detalle`
- ADD KEY `NumPedido` (`NumPedido`), ADD KEY `CodigoProd` (`CodigoProd`);
-
---
--- Indices de la tabla `producto`
---
-ALTER TABLE `producto`
- ADD PRIMARY KEY (`CodigoProd`), ADD KEY `CodigoCat` (`CodigoCat`), ADD KEY `NITProveedor` (`NITProveedor`), ADD KEY `Agregado` (`Nombre`);
-
---
--- Indices de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
- ADD PRIMARY KEY (`NITProveedor`);
-
---
--- Indices de la tabla `venta`
---
-ALTER TABLE `venta`
- ADD PRIMARY KEY (`NumPedido`), ADD KEY `NIT` (`NIT`), ADD KEY `NIT_2` (`NIT`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
+-- Estructura de tabla para la tabla `carrito`
 --
 
---
--- AUTO_INCREMENT de la tabla `venta`
---
-ALTER TABLE `venta`
-MODIFY `NumPedido` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- Restricciones para tablas volcadas
---
+CREATE TABLE IF NOT EXISTS `carrito` (
+  idCarrito INT NOT NULL AUTO_INCREMENT,
+  `cantidad` INT NOT NULL,
+  idProducto INT NOT NULL,
+  idCliente INT NOT NULL,
+  PRIMARY KEY (idCarrito),
+  FOREIGN KEY (idProducto)
+      REFERENCES producto(idProducto),
+  FOREIGN KEY (idCliente)
+      REFERENCES cliente(idCliente)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Filtros para la tabla `detalle`
+-- Estructura de tabla para la tabla `listaDeseo`
 --
-ALTER TABLE `detalle`
-ADD CONSTRAINT `detalle_ibfk_8` FOREIGN KEY (`CodigoProd`) REFERENCES `producto` (`CodigoProd`) ON UPDATE CASCADE,
-ADD CONSTRAINT `detalle_ibfk_9` FOREIGN KEY (`NumPedido`) REFERENCES `venta` (`NumPedido`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE TABLE IF NOT EXISTS `listaDeseo` (
+  idLisDeseo INT NOT NULL AUTO_INCREMENT,
+  idProducto INT NOT NULL,
+  idCliente INT NOT NULL,
+  PRIMARY KEY (idLisDeseo),
+  FOREIGN KEY (idProducto)
+      REFERENCES producto(idProducto),
+  FOREIGN KEY (idCliente)
+      REFERENCES cliente(idCliente)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Filtros para la tabla `producto`
+-- Estructura de tabla para la tabla `pais`
 --
-ALTER TABLE `producto`
-ADD CONSTRAINT `producto_ibfk_7` FOREIGN KEY (`CodigoCat`) REFERENCES `categoria` (`CodigoCat`) ON UPDATE CASCADE,
-ADD CONSTRAINT `producto_ibfk_8` FOREIGN KEY (`NITProveedor`) REFERENCES `proveedor` (`NITProveedor`) ON UPDATE CASCADE,
-ADD CONSTRAINT `producto_ibfk_9` FOREIGN KEY (`Nombre`) REFERENCES `administrador` (`Nombre`);
+
+CREATE TABLE IF NOT EXISTS `pais` (
+  idPais INT NOT NULL AUTO_INCREMENT,
+  `pais` varchar(30) NOT NULL,
+  PRIMARY KEY (idPais)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Filtros para la tabla `venta`
+-- Estructura de tabla para la tabla `departamento`
 --
-ALTER TABLE `venta`
-ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`NIT`) REFERENCES `cliente` (`NIT`) ON UPDATE CASCADE;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE IF NOT EXISTS `departamento` (
+  idDepto INT NOT NULL AUTO_INCREMENT,
+  `departamento` varchar(30) NOT NULL,
+  idPais INT NOT NULL,
+  PRIMARY KEY (idDepto),
+  FOREIGN KEY (idPais)
+      REFERENCES pais(idPais)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `municipio`
+--
+
+CREATE TABLE IF NOT EXISTS `municipio` (
+  idMunicipio INT NOT NULL AUTO_INCREMENT,
+  `municipio` varchar(30) NOT NULL,
+  idDepto INT NOT NULL,
+  PRIMARY KEY (idMunicipio),
+  FOREIGN KEY (idDepto)
+      REFERENCES departamento(idDepto)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `direccion`
+--
+
+CREATE TABLE IF NOT EXISTS `direccion` (
+  idDireccion INT NOT NULL AUTO_INCREMENT,
+  `direccion` varchar(30) NOT NULL,
+  idPais INT NOT NULL,
+  idDepto INT NOT NULL,
+  idMunicipio INT NOT NULL,
+  idCliente INT NOT NULL,
+  PRIMARY KEY (idDireccion),
+  FOREIGN KEY (idPais)
+      REFERENCES pais(idPais),
+  FOREIGN KEY (idDepto)
+      REFERENCES departamento(idDepto),
+  FOREIGN KEY (idMunicipio)
+      REFERENCES municipio(idMunicipio),
+  FOREIGN KEY (idCliente)
+      REFERENCES cliente(idCliente)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tarjeta`
+--
+
+CREATE TABLE IF NOT EXISTS `tarjeta` (
+  idTarjeta INT NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) NOT NULL,
+  `numeroTarjeta` varchar(16) NOT NULL,
+  `codigoSeguridad` varchar(3) NOT NULL,
+  `vencimiento` varchar(7) NOT NULL,
+  PRIMARY KEY (idTarjeta)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `metodoPago`
+--
+
+CREATE TABLE IF NOT EXISTS `metodoPago` (
+  idMetodoPago INT NOT NULL AUTO_INCREMENT,
+  `metodoPago` varchar(30) NOT NULL,
+  idTarjeta INT NOT NULL,
+  PRIMARY KEY (idMetodoPago),
+  FOREIGN KEY (idTarjeta)
+      REFERENCES tarjeta(idTarjeta)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `orden`
+--
+
+CREATE TABLE IF NOT EXISTS `orden` (
+  idOrden INT NOT NULL AUTO_INCREMENT,
+  `fechaOrden` DATE NOT NULL,
+  `monto` decimal(10,2) NOT NULL,
+  `costoEnvio` decimal(10,2) NOT NULL,
+  `estadoOrden` varchar(30) NOT NULL,
+  idMetodoPago INT NOT NULL,
+  idCliente INT NOT NULL,
+  idDireccion INT NOT NULL,
+  PRIMARY KEY (idOrden),
+  FOREIGN KEY (idMetodoPago)
+      REFERENCES metodoPago(idMetodoPago),
+  FOREIGN KEY (idCliente)
+      REFERENCES cliente(idCliente),
+  FOREIGN KEY (idDireccion)
+      REFERENCES direccion(idDireccion)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `descuento`
+--
+
+CREATE TABLE IF NOT EXISTS `descuento` (
+  idDescuento INT NOT NULL AUTO_INCREMENT,
+  `descuento` decimal(10,2) NOT NULL,
+  `fechaInicio` DATE NOT NULL,
+  `fechaFin` DATE NOT NULL,
+  idProducto INT NOT NULL,
+  PRIMARY KEY (idDescuento),
+  FOREIGN KEY (idProducto)
+      REFERENCES producto(idProducto)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalleOrden`
+--
+
+CREATE TABLE IF NOT EXISTS `detalleOrden` (
+  idDetOrden INT NOT NULL AUTO_INCREMENT,
+  `precioUnitario` decimal(10,2) NOT NULL,
+  `cantidad` INT NOT NULL,
+  idOrden INT NOT NULL,
+  idProducto INT NOT NULL,
+  idDescuento INT NULL,
+  PRIMARY KEY (idDetOrden),
+  FOREIGN KEY (idOrden)
+      REFERENCES orden(idOrden),
+  FOREIGN KEY (idProducto)
+      REFERENCES producto(idProducto),
+  FOREIGN KEY (idDescuento)
+      REFERENCES descuento(idDescuento)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `factura`
+--
+
+CREATE TABLE IF NOT EXISTS `orden` (
+  idFactura INT NOT NULL AUTO_INCREMENT,
+  `numeroFact` varchar(30) NOT NULL,
+  `IVA` decimal(10,2) NOT NULL,
+  idOrden INT NOT NULL,
+  PRIMARY KEY (idFactura),
+  FOREIGN KEY (idOrden)
+      REFERENCES orden(idOrden)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
