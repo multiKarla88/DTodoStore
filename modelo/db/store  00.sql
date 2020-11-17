@@ -127,9 +127,9 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `NombreProd` varchar(30) NOT NULL,
   `descripcion` text NOT NULL,
   `Precio` decimal(30,2) NOT NULL,
-  `Modelo` varchar(30) NOT NULL,
+  `Modelo` varchar(30) NULL,
   `Stock` int(20) NOT NULL,
-  `Imagen` varchar(150) NOT NULL,
+  `Imagen` varchar(150) NULL,
   estado varchar(30) NOT NULL,
   `idProveedor` INT NOT NULL, 
   `idMarca` INT NOT NULL,
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `tarjeta` (
 CREATE TABLE IF NOT EXISTS `metodoPago` (
   idMetodoPago INT NOT NULL AUTO_INCREMENT,
   `metodoPago` varchar(30) NOT NULL,
-  idTarjeta INT NOT NULL,
+  idTarjeta INT NULL,
   PRIMARY KEY (idMetodoPago),
   FOREIGN KEY (idTarjeta)
       REFERENCES tarjeta(idTarjeta)
