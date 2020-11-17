@@ -2,17 +2,20 @@
     <head>
         <title>Admin</title>
       <meta charset="UTF-8">
-        <meta http-equiv="Refresh" content="12;url=./configAdmin.php">
+        <meta http-equiv="Refresh" content="12;url=../vista/configAdmin.php">
+
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/font-awesome.min.css">
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/media.css">
-        <link rel="Shortcut Icon" type="image/x-icon" href="./img/icons/logo.ico" />
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
-        <script src="./js/autohidingnavbar.min.js"></script> 
+        <link rel="stylesheet" href="../vista/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../vista/css/normalize.css">
+        <link rel="stylesheet" href="../vista/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../vista/css/style.css">
+        <link rel="stylesheet" href="../vista/css/media.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="../vista/img/icons/logo.ico" />
+        <script src="../vista/js/jquery.min.js"></script>
+        <script src="../vista/js/bootstrap.min.js"></script>
+        <script src="../vista/js/autohidingnavbar.min.js"></script> 
     </head>
     <body>
         <section>

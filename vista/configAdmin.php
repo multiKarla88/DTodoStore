@@ -38,7 +38,7 @@ include '../modelo/consulSQL.php';
                          <!--form de insertar producto   -->
                         <div id="add-product">
                             <h2 class="text-primary text-center"><small><i class="fa fa-plus"></i></small>&nbsp;&nbsp;Agregar un producto nuevo</h2>
-                            <form role="form" action="./regproduct.php" method="post" enctype="multipart/form-data">
+                            <form role="form" action="../controlador/regproduct.php" method="post" enctype="multipart/form-data">
                               <div class="form-group">
                                 <label>Código de producto</label>
                                 <input type="text" class="form-control"  placeholder="Código" required maxlength="30" name="prod-codigo">
@@ -164,19 +164,19 @@ include '../modelo/consulSQL.php';
 
                             <div class="panel-heading text-center"><i class="fa fa-refresh fa-2x"></i><h3>Actualizar datos de producto</h3></div>
                           <div class="table-responsive">
-                              <table class="table table-bordered">
+                              <table class="table table-sm table-dark">
                                   <thead class="">
                                       <tr>
-                                          <th class="text-center">Código</th>
-                                          <th class="text-center">Nombre</th>
-                                          <th class="text-center">Categoría</th>
-                                          <th class="text-center">Precio</th>
-                                          <th class="text-center">Modelo</th>
-                                          <th class="text-center">Marca</th>
-                                          <th class="text-center">Unidades</th>
-                                          <th class="text-center">Proveedor</th>
+                                          <th scope="col">Código</th>
+                                          <th scope="col">Nombre</th>
+                                          <th scope="col">Categoría</th>
+                                          <th scope="col">Precio</th>
+                                          <th scope="col">Modelo</th>
+                                          <th scope="col">Marca</th>
+                                          <th scope="col">Unidades</th>
+                                          <th scope="col">Proveedor</th>
                                           
-                                          <th class="text-center">Opciones</th>
+                                          <th scope="col">Opciones</th>
                                       </tr>
                                   </thead>
                                   <tbody>
