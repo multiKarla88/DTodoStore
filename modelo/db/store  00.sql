@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `detalleOrden` (
 -- Estructura de tabla para la tabla `factura`
 --
 
-CREATE TABLE IF NOT EXISTS `orden` (
+CREATE TABLE IF NOT EXISTS `factura` (
   idFactura INT NOT NULL AUTO_INCREMENT,
   `numeroFact` varchar(30) NOT NULL,
   `IVA` decimal(10,2) NOT NULL,
