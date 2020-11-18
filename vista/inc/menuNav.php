@@ -108,7 +108,7 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item Dama-->
-            <li><a href="#" class="trsn nav-link" title="Dama">Dama</a></li>
+            <li><a href="./product.php?Catprod=5" class="trsn nav-link" title="Dama">Dama</a></li>
             
             <!--Sub-item Caballero-->
             <li><a href="#" class="trsn nav-link" title="Caballero">Caballero</a></li>
@@ -215,7 +215,9 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item microondas-->
-            <li><a href="#" class="trsn nav-link" title="Microondas">Microondas</a></li>
+            <li><a href="#" class="trsn nav-link" title="Microondas">Microondas</a>
+          
+          </li>
             
             <!--Sub-item hornos tostadores-->
             <li><a href="#" class="trsn nav-link" title="Hornos Tostadores">Hornos Tostadores</a></li>
@@ -283,6 +285,9 @@
           </ul>
         </li>
 
+
+
+
         <!--Menu Belleza-->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle trsn nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link">
@@ -293,7 +298,10 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item maquillaje para rostro-->
-            <li><a href="#" class="trsn nav-link" title="Computadoras">Maquillaje para rostro</a></li>
+            <li><a href="#" class="trsn nav-link" title="Computadoras" role="tab" data-toggle="tab">Maquillaje para rostro</a></li>
+
+
+      
             
             <!--Sub-item maquillaje para ojos-->
             <li><a href="#" class="trsn nav-link" title="Maquillaje para ojos">Maquillaje para ojos</a></li>
@@ -317,6 +325,11 @@
             <li><a href="#" class="trsn nav-link" title="Fragancias">Fragancias</a></li>
           </ul>
         </li>
+
+
+
+
+
 
         <!--Menu Juguetes-->
         <li class="dropdown">
