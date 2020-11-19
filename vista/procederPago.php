@@ -39,9 +39,7 @@
     </div>   
         
     </section>
-
-    
-    <!--****** Footer ******-->
+        <!--****** Footer ******-->
     <?php include './inc/footer.php'; ?>
 
   </body>
