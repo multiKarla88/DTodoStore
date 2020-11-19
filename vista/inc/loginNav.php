@@ -31,7 +31,7 @@
 
         <!--Carrito-->
         <li >
-          <a id="cart-link" href="#" class="trsn nav-link" title="Ver/Editar Carro">
+          <a id="cart-link" href="./carrito.php" class="trsn nav-link" title="Ver/Editar Carro">
             <i class="fas fa-shopping-cart"></i>
             <span id="nav-bar-cart"><span class="cart-size">0</span> Producto(s) | $0</span>
           </a>

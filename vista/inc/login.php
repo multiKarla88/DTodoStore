@@ -1,14 +1,9 @@
+<?php include '../inc/link.php'; ?>
 
 <!-- Login Modal-->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form action="../controlador/login.php" method="post" role="form" data-form="login" class="needs-validation" novalidate>
-        <input type="hidden" name="vista" value="<?php echo $currentView ?>">;
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">Ingresar</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
+<section class="container">
+          <h2 class="page-header">Ingresar</h2>
+          
         <div class="modal-body">
           <div class="d-flex flex-column text-center">
             <div class="form-group">
@@ -30,8 +25,8 @@
             </span>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-info">Ingresar</button>
+        <div >
+          <button type="submit" class="btn btn-primary">Ingresar</button>
         </div>
       </div>
     </form>
@@ -58,3 +53,4 @@
     </script>
   </div>
 </div>
+</section>

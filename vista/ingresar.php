@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $currentView = "../registrate.php"
+  $currentView = "procederPago.php"
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="es-sv"> 
@@ -22,9 +22,25 @@
     <?php include './inc/header.php'; ?>
 
     <!-- Contenido de la pagina -->
-    <?php include './inc/registrate.php'; ?>
-    
+    <section class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="page-header">Informacion Personal</h2>
+        
+          <div class="container">
+          <ul class="nav nav-pills">
+          <li ><a href="./procederPago.php">Registrate</a></li>
+          <li class="active"><a href="#">Ingresar</a></li>
+          </ul> 
+      
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="./inc/login.php"></iframe>
+        </div>
+    </div>   
+        
+    </section>
 
+    
     <!--****** Footer ******-->
     <?php include './inc/footer.php'; ?>
 

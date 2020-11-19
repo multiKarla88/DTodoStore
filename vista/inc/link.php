@@ -39,9 +39,13 @@
 <script type="text/javascript" src="https://assets.jumpseller.com/store/bootstrap/themes/299408/main.js?1596826367"></script>
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 <script type="text/javascript">
+
   WebFont.load({
     google: {
       families: ["Open Sans:300,400,500,600,700,800", "Open Sans:300,400,500,600,700,800", "Open Sans:300,400,500,600,700,800"]
     }
   });
 </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
