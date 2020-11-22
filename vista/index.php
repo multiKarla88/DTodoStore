@@ -12,10 +12,7 @@
     <!--Se define codificado utf-8 y se especifica la escala para dispositivos mobiles-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <?php include './inc/link.php' ?>
-    
-
   </head>
 
   <body>
