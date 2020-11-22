@@ -6,16 +6,7 @@
 
 
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../vista/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../vista/css/normalize.css">
-        <link rel="stylesheet" href="../vista/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../vista/css/style.css">
-        <link rel="stylesheet" href="../vista/css/media.css">
-        <link rel="Shortcut Icon" type="image/x-icon" href="../vista/img/icons/logo.ico" />
-        <script src="../vista/js/jquery.min.js"></script>
-        <script src="../vista/js/bootstrap.min.js"></script>
-        <script src="../vista/js/autohidingnavbar.min.js"></script> 
+
     </head>
     <body>
 

@@ -20,8 +20,9 @@
             <span>Productos</span>
           </a>
           <ul class="dropdown-menu">
-            
-            <!--Sub-item Agregar-->
+           <!--Sub-item Agregar-->
+           <li><a href="../admin/AgreProd.php" class="trsn nav-link" title="Sala">Agregar</a></li>
+            <!--Sub-item eliminar-->
             <li><a href="../admin/ElimProd.php" class="trsn nav-link" title="Sala">Eliminar</a></li>
 
 
