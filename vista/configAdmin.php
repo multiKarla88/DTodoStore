@@ -13,7 +13,7 @@ include '../modelo/consulSQL.php';
     
 <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 
-    <script type="text/javascript" src="./js/admin.js"></script>
+    
 </head>
 <body id="container-page-configAdmin">
 

@@ -19,7 +19,14 @@
           <a href="#" class="dropdown-toggle trsn nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link">
             <span>Productos</span>
           </a>
+          <ul class="dropdown-menu">
+            
+            <!--Sub-item Agregar-->
+            <li><a href="../admin/ElimProd.php" class="trsn nav-link" title="Sala">Eliminar</a></li>
 
+
+            
+          </ul>
         </li>
 
         
