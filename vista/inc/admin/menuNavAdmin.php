@@ -25,7 +25,8 @@
             <!--Sub-item eliminar-->
             <li><a href="../admin/ElimProd.php" class="trsn nav-link" title="Sala">Eliminar</a></li>
 
-
+            <!--Sub-item eliminar-->
+            <li><a href="../admin/ActuProd.php" class="trsn nav-link" title="Sala">Actualizar</a></li>
             
           </ul>
         </li>
