@@ -31,7 +31,7 @@ include '../modelo/consulSQL.php';
     
 
 
-    $consulta=  ejecutarSQL::consultar("select * from producto where idCategoria='".$Catprod."' and Stock > 0");
+    $consulta=  ejecutarSQL::consultar("select * from producto where CodigoCat='".$Catprod."' and Stock > 0");
     $totalproductos = mysqli_num_rows($consulta);
     if($totalproductos>0){
         while($fila=mysqli_fetch_array($consulta)){
