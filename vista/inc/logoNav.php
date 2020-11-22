@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarContainer">
 
       <!--Formulario de busqueda en dispositivos mobiles-->
-      <form id="search_mini_form" class="d-lg-none d-md-block" method="get" action="/mx/search">
+      <form id="search_mini_form" class="d-lg-none d-md-block" method="get" action="./busqueproduc.php">
         <div class="input-group mb-3">
           <input type="text" value="" name="q" class="form-control form-control-sm" onFocus="javascript:this.value=''" placeholder="Buscar productos" />
           <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
@@ -109,7 +109,7 @@
       </ul> 
 
       <!--Formulario de busqueda para pantallas amplias-->
-      <form id="search_mini_form" class="navbar-form float-right form-inline d-none d-lg-flex" method="get" action="/mx/search">
+      <form id="search_mini_form" class="navbar-form float-right form-inline d-none d-lg-flex" method="get" action="./busqueproduc.php">
         <input type="text" value="" name="q" class="form-control form-control-sm" onFocus="javascript:this.value=''" placeholder="Buscar productos" />
         <button type="submit" class="btn btn-secondary btn-sm"><i class="fas fa-search"></i></button>
       </form>
