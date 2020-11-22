@@ -1139,3 +1139,8 @@ footer ul.payment li span::before {
   right: 0;
   top: 0;
 }
+
+.logo-style-admin {
+  padding-top: 10px;
+  font-size: x-large;
+}
