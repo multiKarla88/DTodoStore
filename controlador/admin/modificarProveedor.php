@@ -13,13 +13,12 @@ include '../../modelo/consulSQL.php';
    if(!empty($_GET['id'])) 
    {
        $id = checkInput($_GET['id']);
-     
+       
+   }
 
     if(!empty($_POST)) 
     {
-        $id = checkInput($_POST['id']);
-
-       
+              
         $nit               = checkInput($_POST['NITProveedor']);
         $nombre               = checkInput($_POST['NombreProveedor']);
         $direccion        = checkInput($_POST['Direccion']);
@@ -63,6 +62,7 @@ include '../../modelo/consulSQL.php';
             
 
                 $statement = $db->prepare("UPDATE proveedor  set NITProveedor = ?, NombreProveedor = ?, Direccion = ?, Telefono = ?, PaginaWeb = ? WHERE idProveedor = ?");
+                echo '<script>alert("'.$nombre.'");</script>';
                 $statement->execute(array($nit,$nombre, $direccion,$telefono,$web,$id));
             
             Database::disconnect();
@@ -84,8 +84,9 @@ include '../../modelo/consulSQL.php';
         $telefono      = $item['Telefono'];
         $web          = $item['PaginaWeb'];
         Database::disconnect();
-   }
-     }  
+        
+        }
+       
     
 
     function checkInput($data) 
