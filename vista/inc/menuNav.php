@@ -96,7 +96,7 @@
 
         <!--Menu item Inicio-->
         <li class="nav-item  ">
-          <a href="#"  title="Inicio" class="level-1 trsn nav-link" >Inicio</a>
+          <a href="index.php"  title="Inicio" class="level-1 trsn nav-link" >Inicio</a>
         </li>
 
         <!--Menu moda-->
