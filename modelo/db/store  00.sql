@@ -59,7 +59,7 @@ CREATE TABLE `cliente` (
   `Nombre` varchar(30) NOT NULL,
   `NombreCompleto` varchar(70) NOT NULL,
   `Apellido` varchar(70) NOT NULL,
-  `Telefono` int(20) NOT NULL,
+  `Telefono` varchar(20) NOT NULL,
   `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -572,7 +572,7 @@ CREATE TABLE `tarjeta` (
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
   `correo` varchar(50) NOT NULL,
-  `contrasenia` varchar(30) NOT NULL,
+  `contrasenia` varchar(100) NOT NULL,
   `fechaIngreso` date NOT NULL,
   `estado` varchar(30) NOT NULL,
   `idRol` int(11) NOT NULL

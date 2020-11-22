@@ -15,17 +15,14 @@
             "where correo='$email' and contrasenia='$password'");
 
         $records=mysqli_num_rows($userResult);
-        error_log ("records: " . $records . PHP_EOL, 0);
         if($records > 0){
             while($fila = mysqli_fetch_array($userResult)) {
                 $usuario = $fila['NombreCompleto'];
                 $rol = $fila['rol'];
-                error_log ("NombreCompleto: " . $usuario . PHP_EOL, 0);
-                error_log ("Rol: " . $rol . PHP_EOL, 0);
             }
             $_SESSION['usuario']=$usuario;
             if ($rol === 'Admin') {
-                $uriActual = '/vista/admin/index.php';
+                $uriActual = '../vista/admin/index.php';
             }
             header("Location: $uriActual?u=$usuario");
         } else {

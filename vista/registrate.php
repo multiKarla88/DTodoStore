@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $currentView = "../registrate.php"
+  $currentView = "../vista/registrate.php"
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="es-sv"> 
