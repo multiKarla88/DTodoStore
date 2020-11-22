@@ -30,7 +30,7 @@ include '../modelo/consulSQL.php';
         
      
 
-        $busprod= $_GET['busprod'];
+        $busprod= $_GET['q'];
         
 
 
