@@ -2,7 +2,7 @@
     <head>
         <title>Admin</title>
       <meta charset="UTF-8">
-        <meta http-equiv="Refresh" content="12;url=../../vista/admin/AgreProd.php">
+        <meta http-equiv="Refresh" content="10;url=../../vista/admin/AgreProd.php">
 
 
 
