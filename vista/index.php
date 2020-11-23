@@ -67,9 +67,22 @@ include '../modelo/consulSQL.php';
     <script src="js/agregarcarousel.js"></script>
 
     <!-- Contenido de la pagina -->
-    <section class="container">
+    <section id="prove-product-cat-config">
+        <div class="container">
 
-<div class="row">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="nav-item"><a class="nav-link" href="#Oferta" role="tab" data-toggle="tab">Productos en Ofertas</a></li>
+              <li role="presentation" class="nav-item"><a class="nav-link" href="#Nuevo" role="tab" data-toggle="tab">Productos Nuevos</a></li>
+              <li role="presentation" class="nav-item"><a class="nav-link" href="#Destacados" role="tab" data-toggle="tab">Productos Destacados</a></li>
+            </ul>
+            <div class="tab-content">
+                <!--==============================Panel ofertas===============================-->
+                <div role="tabpanel" class="tab-pane fade in active" id="Oferta">
+               
+               
+
+               <div class="row">
 
     <?php
     
@@ -97,13 +110,113 @@ include '../modelo/consulSQL.php';
             ';
         }   
     }else{
-        echo '<h2>Categoria '.$Catprod.' sin productos</h2>';
+        echo '<h2>Categoria sin productos</h2>';
     } 
 
         ?>
 
            </div>
-    <section>
+    
+
+                </div><!--fin-->
+
+                <!--==============================Panel nuevos===============================-->
+                <div role="tabpanel" class="tab-pane fade in active" id="Nuevo">
+
+                <div class="row">
+
+<?php
+
+$consulta=  ejecutarSQL::consultar("select * from producto where estado='Nuevo' and Stock > 0");
+$totalproductos = mysqli_num_rows($consulta);
+if($totalproductos>0){
+    while($fila=mysqli_fetch_array($consulta)){
+        echo '
+       
+       <div class="card" style="width: 18rem;">
+              <img class="img-fluid img-portfolio img-hover mb-3" src="img/img-products/'.$fila['Imagen'].'">
+              
+              <div class="card-body">
+                <p class="card-text">'.$fila['NombreProd'].'</p>
+                <div class="price-mob">$'.$fila['Precio'].'</div>
+                </div>
+                <div class="card-body">
+                    <a href="infoProd.php?CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Detalles</a>&nbsp;&nbsp;
+                    <button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                </div>
+        </div>
+              
+            
+            
+        ';
+    }   
+}else{
+    echo '<h2>Categoria sin productos</h2>';
+} 
+
+    ?>
+
+       </div>
+
+                </div><!--fin-->
+
+                <!--==============================Panel Destacados===============================-->
+                <div role="tabpanel" class="tab-pane fade in active" id="Destacados">
+
+                <div class="row">
+
+<?php
+
+$consulta=  ejecutarSQL::consultar("select * from producto where estado='Destacado' and Stock > 0");
+$totalproductos = mysqli_num_rows($consulta);
+if($totalproductos>0){
+    while($fila=mysqli_fetch_array($consulta)){
+        echo '
+       
+       <div class="card" style="width: 18rem;">
+              <img class="img-fluid img-portfolio img-hover mb-3" src="img/img-products/'.$fila['Imagen'].'">
+              
+              <div class="card-body">
+                <p class="card-text">'.$fila['NombreProd'].'</p>
+                <div class="price-mob">$'.$fila['Precio'].'</div>
+                </div>
+                <div class="card-body">
+                    <a href="infoProd.php?CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Detalles</a>&nbsp;&nbsp;
+                    <button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                </div>
+        </div>
+              
+            
+            
+        ';
+    }   
+}else{
+    echo '<h2>Categoria sin productos</h2>';
+} 
+
+    ?>
+
+       </div>
+
+                </div><!--fin-->
+
+
+                </div>
+                </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--****** Footer ******-->
     <?php include './inc/footer.php' ?>
