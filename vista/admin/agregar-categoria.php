@@ -35,13 +35,25 @@
               <!-- CARD DE BOOTSTRAP -->
               <div class="card" style="width: 70rem;">
                 <div class="card-body">
+
+
+                <?php if (isset($_SESSION['message'])) { ?>
+                <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+                  <?= $_SESSION['message']?>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <?php session_unset(); } ?>
+
                   <!-- FORM DE BOOTSTRAP -->
-                  <form action="#" method="post">
+                  <!-- ../../controlador/agregarCategoria.php -->
+                  <form action="../../../controlador/admin/agregarCategoria.php" method="post">
                     <div class="form-group row">
                       <label for="correo" class="col-sm-2 col-form-label">Código*</label>
                       <div class="col-sm-10">
                         <!-- Aquí traera la el correo del usuario para cambiarla -->
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" value="" >
+                        <input type="text" name="codigo" class="form-control" id="correo" aria-describedby="emailHelp" value="" >
                       </div>
                     </div>
                     
@@ -49,7 +61,7 @@
                       <label for="nombre" class="col-sm-2 col-form-label">Nombre*</label>
                       <div class="col-sm-10"  style="padding-bottom:25px;">
                         <!-- Aquí traera la el nombre del usuario para cambiarla -->
-                        <input type="text" class="form-control" id="nombre" value="">
+                        <input type="text" name="nombre" class="form-control" id="nombre" value="">
                       </div>
                     </div>
 
@@ -57,19 +69,19 @@
                       <label for="nombre" class="col-sm-2 col-form-label">Descrición*</label>
                       <div class="col-sm-10"  style="padding-bottom:25px;">
                         <!-- Aquí traera la el nombre del usuario para cambiarla -->
-                        <input type="text" class="form-control" id="nombre" value="">
+                        <input type="text" name="descripcion" class="form-control" id="nombre" value="">
                       </div>
                     </div>
 
                     <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Activo</label>
+                    <label class="form-check-label" name="" for="inlineRadio1">Activo</label>
                     </div>
                     <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                    <label class="form-check-label" name="" for="inlineRadio2">Inactivo</label>
                     </div>
-                    <a href="#" class="btn btn-primary" style="float:right;">Agregar categoria</a>
+                    <button type="submit" name="agregarCategoria" class="btn btn-primary" style="float:right;">Agregar categoria</button>
                   </form>
                 </div>
               </div>
