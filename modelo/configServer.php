@@ -1,8 +1,8 @@
 <?php
 define("USER", "root");
-define("PASS", "w2530rodas");
+define("PASS", "root");
 define("BD", "store");
-define("SERVER", "localhost:3306");
+define("SERVER", "localhost");
 
 class Database
 {
