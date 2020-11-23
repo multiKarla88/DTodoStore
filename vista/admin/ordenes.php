@@ -17,26 +17,54 @@
     <link rel="stylesheet" href="../css/estilo.css">
 
     <script type="text/javascript">
-      $(document).ready(function(){
+      cargarDatos = function(){
         $.ajax({ url: "../../controlador/admin/ordenes.php",
           context: document.body,
-          success: function(data){
+          success: function(data) {
             let dataTable = "<tr><td>No hay datos</td></tr>";
-            if (data != 'null') {
-              let dataTable = "";
-              for (row in data) {
-                dataTable += "<tr>";
-                dataTable += "<td>" + row.idOrden + "</td>";
-                dataTable += "<td>" + row.NombreCompleto + "</td>";
-                dataTable += "<td>" + row.monto + "</td>";
-                dataTable += "<td>" + row.fechaOrden + "</td>";
-                dataTable += "<td>" + row.estadoOrden + "</td>";
-                dataTable += "<td>Acciones</td>";
-                dataTable += "</tr>";
-              }
+            if (data) {
+              dataTable = "";
+              let dd = JSON.parse(data);
+              dataTable = dd.map(function(row) {
+                let dataRow = "<tr>";
+                dataRow += "<td>" + row.idOrden + "</td>";
+                dataRow += "<td>" + row.NombreCompleto + "</td>";
+                dataRow += "<td>" + row.monto + "</td>";
+                dataRow += "<td>" + row.fechaOrden + "</td>";
+
+                let estado = "<td><form action='' method='post'>";
+                estado += "<select class='changeStatus' name='changeStatus' onchange='actualzarEstado(this, " + row.idOrden + ");'>";
+                estado += "<option value='pendiente' ";
+                estado += (row.estadoOrden === "pendiente") ? "selected>pendiente</option>" : ">pendiente</option>";
+                estado += "<option value='enviado' ";
+                estado += (row.estadoOrden === "enviado") ? "selected >enviado</option>" : ">enviado</option>";
+                estado += "<option value='entregado' ";
+                estado += (row.estadoOrden === "entregado") ? "selected >entregado</option>" : ">entregado</option>";
+                estado += "</select>";
+                estado += "</form></td>";
+
+                dataRow += estado;
+                dataRow += "<td>Acciones</td>";
+                dataRow += "</tr>";
+                return dataRow;
+              });
             }
             $('#ordenes').html(dataTable);
           }});
+      }
+
+      actualzarEstado = function(elemento, idOrden){
+        $.ajax({
+          type: 'POST',
+          url: '../../controlador/admin/ordenActualizarEstado.php',
+          data: {'estado':  elemento.selectedOptions[0].value, 'idOrden': idOrden},
+          dataType: 'html',
+          success: cargarDatos
+        });
+      }
+      
+      $(document).ready(function(){
+        cargarDatos();
       });
     </script>
   </head>
