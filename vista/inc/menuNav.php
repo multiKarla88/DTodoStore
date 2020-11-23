@@ -215,45 +215,45 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item microondas-->
-            <li><a href="./product.php?Catprod=601" class="trsn nav-link" title="Microondas">Microondas</a>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Microondas">Microondas</a>
           
           </li>
             
             <!--Sub-item hornos tostadores-->
-            <li><a href="./product.php?Catprod=602" class="trsn nav-link" title="Hornos Tostadores">Hornos Tostadores</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Hornos Tostadores">Hornos Tostadores</a></li>
             
             <!--Sub-item licuadoras-->
-            <li><a href="./product.php?Catprod=603" class="trsn nav-link" title="Licuadoras">Licuadoras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Licuadoras">Licuadoras</a></li>
             
             <!--Sub-item cafeteras-->
-            <li><a href="./product.php?Catprod=604" class="trsn nav-link" title="Cafeteras">Cafeteras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Cafeteras">Cafeteras</a></li>
 
             <!--Sub-item tostadoras-->
-            <li><a href="./product.php?Catprod=605" class="trsn nav-link" title="Tostadoras">Tostadoras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Tostadoras">Tostadoras</a></li>
 
             <!--Sub-item batidoras-->
-            <li><a href="./product.php?Catprod=607" class="trsn nav-link" title="Batidoras">Batidoras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Batidoras">Batidoras</a></li>
 
             <!--Sub-item Wafleras Grill y sandwich-->
-            <li><a href="./product.php?Catprod=608" class="trsn nav-link" title="Wafleras Grill y sandwich">Wafleras Grill y sandwich</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Wafleras Grill y sandwich">Wafleras Grill y sandwich</a></li>
 
             <!--Sub-item olla arroceras-->
-            <li><a href="./product.php?Catprod=609" class="trsn nav-link" title="Ollas arroceras">Ollas arroceras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Ollas arroceras">Ollas arroceras</a></li>
 
             <!--Sub-item teteras-->
-            <li><a href="./product.php?Catprod=610" class="trsn nav-link" title="Teteras">Teteras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Teteras">Teteras</a></li>
 
             <!--Sub-item proceador para picado-->
-            <li><a href="./product.php?Catprod=611" class="trsn nav-link" title="Procesador para picado">Procesador para picado</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Procesador para picado">Procesador para picado</a></li>
 
             <!--Sub-item extractos de jugo-->
-            <li><a href="./product.php?Catprod=612" class="trsn nav-link" title="Extractores de jugo">Extractores de jugo</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Extractores de jugo">Extractores de jugo</a></li>
 
             <!--Sub-item planchas de ropa-->
-            <li><a href="./product.php?Catprod=613" class="trsn nav-link" title="Planchas de ropa">Planchas de ropa</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Planchas de ropa">Planchas de ropa</a></li>
 
             <!--Sub-item aspiradoras-->
-            <li><a href="./product.php?Catprod=614" class="trsn nav-link" title="Aspiradores">Aspiradores</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Aspiradores">Aspiradores</a></li>
           </ul>
         </li>
         
@@ -266,22 +266,22 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item computadoras-->
-            <li><a href="./product.php?Catprod=701" class="trsn nav-link" title="Computadoras">Computadoras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Computadoras">Computadoras</a></li>
             
             <!--Sub-item telefonos-->
-            <li><a href="./product.php?Catprod=702" class="trsn nav-link" title="Telefonos">Telefonos</a></li>
+            <li><a href="./product.php?Catprod=25" class="trsn nav-link" title="Telefonos">Telefonos</a></li>
             
             <!--Sub-item pantallas-->
-            <li><a href="./product.php?Catprod=703" class="trsn nav-link" title="Pantallas">Pantallas</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Pantallas">Pantallas</a></li>
             
             <!--Sub-item audio y video-->
-            <li><a href="./product.php?Catprod=704" class="trsn nav-link" title="Audio y video">Audio y video</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Audio y video">Audio y video</a></li>
 
             <!--Sub-item smartwatch-->
-            <li><a href="./product.php?Catprod=705" class="trsn nav-link" title="Smartwatch">Smartwatch</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Smartwatch">Smartwatch</a></li>
 
             <!--Sub-item camaras-->
-            <li><a href="./product.php?Catprod=706" class="trsn nav-link" title="Camaras">Camaras</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Camaras">Camaras</a></li>
           </ul>
         </li>
 
@@ -298,31 +298,31 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item maquillaje para rostro-->
-            <li><a href="./product.php?Catprod=801" class="trsn nav-link" title="Computadoras" role="tab" data-toggle="tab">Maquillaje para rostro</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Computadoras" role="tab" data-toggle="tab">Maquillaje para rostro</a></li>
 
 
       
             
             <!--Sub-item maquillaje para ojos-->
-            <li><a href="./product.php?Catprod=802" class="trsn nav-link" title="Maquillaje para ojos">Maquillaje para ojos</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Maquillaje para ojos">Maquillaje para ojos</a></li>
             
             <!--Sub-item labiales-->
-            <li><a href="./product.php?Catprod=803" class="trsn nav-link" title="Labiales">Labiales</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Labiales">Labiales</a></li>
             
             <!--Sub-item cuidado de piel-->
-            <li><a href="./product.php?Catprod=804" class="trsn nav-link" title="Cuidado de piel">Cuidado de piel</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Cuidado de piel">Cuidado de piel</a></li>
 
             <!--Sub-item cuidado de cabello-->
-            <li><a href="./product.php?Catprod=805" class="trsn nav-link" title="Cuidado de cabello">Cuidado de cabello</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Cuidado de cabello">Cuidado de cabello</a></li>
 
             <!--Sub-item baño y ducha-->
-            <li><a href="./product.php?Catprod=806" class="trsn nav-link" title="Baño y ducha">Baño y ducha</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Baño y ducha">Baño y ducha</a></li>
 
             <!--Sub-item uñas-->
-            <li><a href="./product.php?Catprod=807" class="trsn nav-link" title="Uñas">Uñas</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Uñas">Uñas</a></li>
 
             <!--Sub-item fragancias-->
-            <li><a href="./product.php?Catprod=808" class="trsn nav-link" title="Fragancias">Fragancias</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Fragancias">Fragancias</a></li>
           </ul>
         </li>
 
@@ -341,10 +341,10 @@
           <ul class="dropdown-menu">
             
             <!--Sub-item niños-->
-            <li><a href="./product.php?Catprod=901" class="trsn nav-link" title="Niños">Niños</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Niños">Niños</a></li>
             
             <!--Sub-item niñas-->
-            <li><a href="./product.php?Catprod=902" class="trsn nav-link" title="Niñas">Niñas</a></li>
+            <li><a href="./product.php?Catprod=" class="trsn nav-link" title="Niñas">Niñas</a></li>
 
           </ul>
         </li>
