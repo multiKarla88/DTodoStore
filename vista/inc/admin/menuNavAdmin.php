@@ -66,8 +66,8 @@
 
         
         <!--Menu Ordenes-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle trsn nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link">
+        <li>
+          <a href="../admin/ordenes.php" class="trsn nav-link" role="button" aria-haspopup="true" aria-expanded="false" class="nav-link">
             <span>Ordenes</span>
           </a>
 

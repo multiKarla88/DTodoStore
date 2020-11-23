@@ -13,14 +13,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <?php include './../inc/link.php'; ?>
-    <link rel="stylesheet" href="./../css/estilosUsuario.css">
+    <?php include '../inc/link.php'; ?>
+    <link rel="stylesheet" href="../css/estilo.css">
   </head>
 
   <body>
 
     <!-- ***** Navegacion / Nav ******-->
-    <?php include './../inc/header.php'; ?>
+    <?php include '../inc/admin/headerAdmin.php'; ?>
 
     <!-- Contenido de la pagina -->
     <section class="container">
@@ -43,7 +43,6 @@
     </section>
 
     <!--****** Footer ******-->
-    <?php include './../inc/footer.php'; ?>
-
+    <?php include '../inc/admin/footerAdmin.php'; ?>
   </body>
 </html>
