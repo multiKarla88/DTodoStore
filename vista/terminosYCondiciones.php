@@ -26,11 +26,13 @@
     <section class="container"” >
 
         <style>
-          .col-12{
+          @media only screen and (max-width: 1300px) {
+            .col-12{
             padding-top: 50px;
+            }
           }
         </style>
-        
+
         <div class="col-12">
             <h2 class="page-header">Terminos y condiciones</h2>
         </div>
