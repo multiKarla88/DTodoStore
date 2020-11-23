@@ -2,6 +2,10 @@
   session_start();
   $currentView = "../index.php"
 ?>
+<?php
+include '../modelo/configServer.php';
+include '../modelo/consulSQL.php';
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="es-sv"> 
 
@@ -64,248 +68,42 @@
 
     <!-- Contenido de la pagina -->
     <section class="container">
-  
-      <!-- Seccion de productos -->
-      <div class="row">
 
-        <div class="col-12">
-          <h2 class="page-header">Productos Destacados</h2>
-        </div>
+<div class="row">
 
-        <!-- Productos destacados -->
-
-        <!-- Primer producto -->
-        <div class="col-md-3 col-6 product-block">
-              
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/255/320?1439529365" 
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/255/320?1439529365 1x, 
-                https://cdnx.jumpseller.com/bootstrap/image/429444/resize/510/640?1439529365 2x" 
-              alt="Wacom Bamboo Tablet" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Wacom Bamboo Tablet</a></h3>
-            <div class="price-mob">$100.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <!-- Segundo producto -->  
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3" 
-              src="https://cdnx.jumpseller.com/bootstrap/image/429445/resize/255/320?1439529548" 
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429445/resize/255/320?1439529548 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429445/resize/510/640?1439529548 2x" 
-              alt="Smartphone MTK6572 " />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Smartphone MTK6572 </a></h3>
-            <div class="price-mob">$500.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="/mx/imac-desktop-computer">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429446/resize/255/320?1439529839"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429446/resize/255/320?1439529839 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429446/resize/510/640?1439529839 2x"
-              alt="iMac Desktop Computer" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">iMac Desktop Computer</a></h3>
-            <div class="price-mob">$1.200.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-        
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429450/resize/255/320?1439530709"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429450/resize/255/320?1439530709 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429450/resize/510/640?1439530709 2x"
-              alt="DualShock Controller for PlayStation 4" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">DualShock Controller for PlayStation 4</a></h3>
-            <div class="price-mob">$20.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-      </div><!-- /.row -->
-
-      <!-- Seccion de Productos -->
-      <div class="row">
-
-        <div class="col-12">
-          <h2 class="page-header">Últimos Productos</h2>
-        </div>
-
-        <!-- Featured Products -->
-        <div class="col-md-3 col-6 product-block">
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/6221140/resize/255/320?1564681025"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/6221140/resize/255/320?1564681025 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/6221140/resize/510/640?1564681025 2x"
-              alt="Camara Nikon Reflex D7200 + Lente 18-140" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Camara Nikon Reflex D7200 + Lente 18-140</a></h3>
-            <div class="price-mob">$1.290.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/6221126/resize/255/320?1564681003"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/6221126/resize/255/320?1564681003 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/6221126/resize/510/640?1564681003 2x"
-              alt="Notebook Asus X507UA Intel Core i3 4GB RAM " />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Notebook Asus X507UA Intel Core i3 4GB RAM </a></h3>
-            <div class="price-mob">$900.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429451/resize/255/320?1439530880"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429451/resize/255/320?1439530880 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429451/resize/510/640?1439530880 2x"
-              alt="Dualshock Controller for PlayStation 4" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Dualshock Controller for PlayStation 4</a></h3>
-            <div class="price-mob">
-              <span class="product-block-not-available">Agotado</span>
+    <?php
+    
+    $consulta=  ejecutarSQL::consultar("select * from producto where estado='Oferta' and Stock > 0");
+    $totalproductos = mysqli_num_rows($consulta);
+    if($totalproductos>0){
+        while($fila=mysqli_fetch_array($consulta)){
+            echo '
+           
+           <div class="card" style="width: 18rem;">
+                  <img class="img-fluid img-portfolio img-hover mb-3" src="img/img-products/'.$fila['Imagen'].'">
+                  
+                  <div class="card-body">
+                    <p class="card-text">'.$fila['NombreProd'].'</p>
+                    <div class="price-mob">$'.$fila['Precio'].'</div>
+                    </div>
+                    <div class="card-body">
+                        <a href="infoProd.php?CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Detalles</a>&nbsp;&nbsp;
+                        <button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                    </div>
             </div>
-            <div class="clearfix"></div>
-          </div>
+                  
+                
+                
+            ';
+        }   
+    }else{
+        echo '<h2>Categoria '.$Catprod.' sin productos</h2>';
+    } 
 
-        </div>
+        ?>
 
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429448/resize/255/320?1439530289"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429448/resize/255/320?1439530289 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429448/resize/510/640?1439530289 2x"
-              alt="Asus Transformer Pad Tablet" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Asus Transformer Pad Tablet</a></h3>
-            <div class="price-mob">$200.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429450/resize/255/320?1439530709"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429450/resize/255/320?1439530709 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429450/resize/510/640?1439530709 2x"
-              alt="DualShock Controller for PlayStation 4" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">DualShock Controller for PlayStation 4</a></h3>
-            <div class="price-mob">$20.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-  
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429446/resize/255/320?1439529839"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429446/resize/255/320?1439529839 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429446/resize/510/640?1439529839 2x"
-              alt="iMac Desktop Computer" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">iMac Desktop Computer</a></h3>
-            <div class="price-mob">$1.200.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-  
-        <div class="col-md-3 col-6 product-block">
-          
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429445/resize/255/320?1439529548"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429445/resize/255/320?1439529548 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429445/resize/510/640?1439529548 2x"
-              alt="Smartphone MTK6572 " />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Smartphone MTK6572 </a></h3>
-            <div class="price-mob">$500.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-        <div class="col-md-3 col-6 product-block">
-
-          <a href="#">
-            <img class="img-fluid img-portfolio img-hover mb-3"
-              src="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/255/320?1439529365"
-              srcset="https://cdnx.jumpseller.com/bootstrap/image/429444/resize/255/320?1439529365 1x,
-                https://cdnx.jumpseller.com/bootstrap/image/429444/resize/510/640?1439529365 2x"
-              alt="Wacom Bamboo Tablet" />
-          </a>
-
-          <div class="caption">
-            <h3><a href="#">Wacom Bamboo Tablet</a></h3>
-            <div class="price-mob">$100.000</div>
-            <div class="clearfix"></div>
-          </div>
-
-        </div>
-
-      </div><!-- /.row -->
-
-    </section>
+           </div>
+    <section>
 
     <!--****** Footer ******-->
     <?php include './inc/footer.php' ?>
